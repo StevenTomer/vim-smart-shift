@@ -1,0 +1,36 @@
+*smart_shift.txt* Smart shifting and duplication utilities
+
+SMART SHIFT                                                 *smart-shift*
+
+1. Introduction                                 |smart-shift-intro|
+2. Mappings                                     |smart-shift-mappings|
+3. Configuration                                |smart-shift-config|
+
+==============================================================================
+1. INTRODUCTION                                     *smart-shift-intro*
+
+vim-smart-shift provides context-aware movements.
+- In Normal/Line mode, it acts like indentation or line moving.
+- In Visual/Block mode, it moves text destructively (overwriting target).
+- It supports infinite scrolling (automatically adding new lines when moving
+  or duplicating past the file boundaries).
+
+==============================================================================
+2. MAPPINGS                                         *smart-shift-mappings*
+
+<C-h>       Left Shift (Dedent / Destructive Left)
+<C-l>       Right Shift (Indent / Destructive Right)
+<C-S-l>     Right Shift (Indent / Push Right)
+<C-j>       Move Down
+<C-k>       Move Up
+<C-S-j>     Duplicate Down
+<C-S-k>     Duplicate Up
+
+==============================================================================
+3. CONFIGURATION                                    *smart-shift-config*
+
+To disable default mappings:
+    let g:smart_shift_no_mappings = 1
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
