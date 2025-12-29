@@ -10,7 +10,7 @@ Moves and duplicates text intelligently based on your current mode.
 Using [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'your-username/vim-smart-shift'
+Plug 'StevenTomer/vim-smart-shift'
 ```
 
 ## Mappings
