@@ -1,7 +1,7 @@
 " =============================================================================
 " File:        plugin/smart_shift.vim
 " Description: Smart indentation, moving, and duplication for all modes.
-" Maintainer:  Steven Tomer
+" Maintainer:  User
 " License:     MIT
 " =============================================================================
 
@@ -202,10 +202,15 @@ function! s:SmartDuplicate(context, count, direction)
         for l:i in range(a:count)
             if a:direction == 1
                 let l:target = (l:op_mode ==# 'n' ? line('.') : line("'>"))
-                silent! execute "copy " . l:target
             else
                 let l:target = (l:op_mode ==# 'n' ? line('.') : line("'<")) - 1
+            endif
+            
+            " FIX: Explicitly use range '<,'> for Visual Line mode
+            if l:op_mode ==# 'n'
                 silent! execute "copy " . l:target
+            else
+                silent! execute "'<,'>copy " . l:target
             endif
         endfor
         
